@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>วงแดงเกมส์ 2025</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(180deg, #1a2b3d 0%, #1a2b3d 30%, #2d4a3d 50%, #3d5a2b 70%, #5a6b2a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: sparkleFloat 8s infinite ease-in-out;
+    opacity: 0;
+}
+.sparkle:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; background: #3498db; }
+.sparkle:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; background: #2ecc71; }
+.sparkle:nth-child(3) { top: 60%; left: 10%; animation-delay: 2s; background: #f39c12; }
+.sparkle:nth-child(4) { top: 80%; left: 70%; animation-delay: 3s; background: #e74c3c; }
+.sparkle:nth-child(5) { top: 30%; left: 90%; animation-delay: 4s; background: #9b59b6; }
+.sparkle:nth-child(6) { top: 70%; left: 20%; animation-delay: 5s; background: #1abc9c; }
+
+@keyframes sparkleFloat {
+    0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+    50% { opacity: 1; transform: translateY(-20px) scale(1.5); }
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+.logo {
+    width: 300px;
+    animation: logoGlow 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 30px rgba(52, 152, 219, 0.5)) 
+            drop-shadow(0 0 20px rgba(46, 204, 113, 0.3));
+}
+@keyframes logoGlow {
+    from { 
+        filter: drop-shadow(0 0 30px rgba(52, 152, 219, 0.5)) 
+                drop-shadow(0 0 20px rgba(46, 204, 113, 0.3));
+    }
+    to { 
+        filter: drop-shadow(0 0 50px rgba(52, 152, 219, 0.9)) 
+                drop-shadow(0 0 40px rgba(46, 204, 113, 0.6));
+    }
+}
+
+.timer-display {
+    font-size: 160px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3498db, #2ecc71, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.4));
+}
+
+.controls {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.control-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+    background: linear-gradient(135deg, #5dade2, #3498db);
+}
+.control-btn:active {
+    transform: translateY(0);
+}
+.control-btn:nth-child(1) {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+}
+.control-btn:nth-child(1):hover {
+    background: linear-gradient(135deg, #48c9b0, #1abc9c);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
+}
+.control-btn:nth-child(2) {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+.control-btn:nth-child(2):hover {
+    background: linear-gradient(135deg, #58d68d, #2ecc71);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+}
+
+.input-group {
+    position: fixed;
+    bottom: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.input-field {
+    background: rgba(10, 26, 40, 0.8);
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #3498db;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    width: 80px;
+    text-align: center;
+}
+.input-field:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+.input-label {
+    color: #3498db;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .timer-display { font-size: 100px; letter-spacing: 5px; }
+    .logo { width: 200px; }
+    .controls { right: 10px; }
+    .control-btn { font-size: 14px; padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+
+<div class="logo-container">
+    <img class="logo" src="https://i.ibb.co/Z6JRw04w/logo-01.png" alt="วงแดงเกมส์ 2025">
+</div>
+
+<div class="timer-display" id="display">00:00</div>
+
+<div class="input-group" id="countdownInputs">
+    <input type="number" id="minutes" class="input-field" min="0" max="99" value="5">
+    <span class="input-label">นาที</span>
+    <input type="number" id="seconds" class="input-field" min="0" max="59" value="0">
+    <span class="input-label">วินาที</span>
+</div>
+
+<div class="controls">
+    <button class="control-btn" onclick="switchMode('stopwatch')">จับเวลา</button>
+    <button class="control-btn" onclick="switchMode('countdown')">นับถอยหลัง</button>
+    <button class="control-btn" id="startBtn">เริ่ม</button>
+    <button class="control-btn" onclick="reset()">รีเซ็ต</button>
+</div>
+
+<script>
+let countdownTime = 0;
+let startTime = null;
+let isRunning = false;
+let mode = 'countdown';
+let pausedTime = 0;
+
+function formatTime(ms) {
+    const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+}
+
+function updateDisplay(ms) {
+    document.getElementById('display').textContent = formatTime(ms);
+}
+
+function updateFromInput() {
+    if (isRunning) return;
+    const m = parseInt(document.getElementById('minutes').value) || 0;
+    const s = parseInt(document.getElementById('seconds').value) || 0;
+    countdownTime = (m * 60 + s) * 1000;
+    pausedTime = countdownTime;
+    updateDisplay(countdownTime);
+}
+
+function switchMode(newMode) {
+    if (isRunning) return;
+    mode = newMode;
+    document.getElementById('countdownInputs').style.display = (mode === 'countdown') ? 'flex' : 'none';
+    reset();
+}
+
+function start() {
+    if (mode === 'countdown' && pausedTime === 0) {
+        alert('กรุณาตั้งเวลานับถอยหลัง');
+        return;
+    }
+    isRunning = true;
+    startTime = Date.now();
+    document.getElementById('startBtn').textContent = 'หยุด';
+    requestAnimationFrame(loop);
+}
+
+function stop() {
+    isRunning = false;
+    document.getElementById('startBtn').textContent = 'เริ่ม';
+}
+
+function reset() {
+    stop();
+    pausedTime = (mode === 'stopwatch') ? 0 : countdownTime;
+    updateDisplay(pausedTime);
+}
+
+function loop() {
+    if (!isRunning) return;
+    const now = Date.now();
+    const elapsed = now - startTime;
+
+    if (mode === 'stopwatch') {
+        updateDisplay(pausedTime + elapsed);
+    } else {
+        let remaining = pausedTime - elapsed;
+        if (remaining <= 0) {
+            updateDisplay(0);
+            reset();
+            return;
+        }
+        updateDisplay(remaining);
+    }
+    requestAnimationFrame(loop);
+}
+
+document.getElementById('startBtn').addEventListener('click', () => {
+    if (isRunning) {
+        if (mode === 'stopwatch') {
+            pausedTime += Date.now() - startTime;
+        } else {
+            pausedTime -= Date.now() - startTime;
+        }
+        stop();
+    } else {
+        start();
+    }
+});
+
+document.getElementById('minutes').addEventListener('input', updateFromInput);
+document.getElementById('seconds').addEventListener('input', updateFromInput);
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        event.preventDefault();
+        document.getElementById('startBtn').click();
+    }
+});
+
+updateFromInput();
+</script>
+</body>
+</html>
